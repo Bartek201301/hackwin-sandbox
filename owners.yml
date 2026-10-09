@@ -1,7 +1,6 @@
 # Ownership map: path globs to ownership roles.
 #
-# This is an example in the layout of HackYeah 2026: one directory per feature
-# role, everything else shared. Replace the roles and globs with your own.
+# One directory per feature role, everything else shared.
 #
 # - A path matches at most one role. Globs must not overlap.
 # - A path that matches no role and no open entry belongs to the shared role,
@@ -16,10 +15,12 @@ schema: 1
 roles:
   shared:
     shared: true                  # exactly one role carries this flag
-    paths: ["src/shared/**", "src/app/**", "docs/**", ".github/**"]
-  workbench:
-    paths: ["src/features/workbench/**"]
-  detection:
-    paths: ["src/features/detection/**"]
+    paths: ["src/shared/**", "docs/**", ".github/**"]
+  counter:
+    paths: ["src/features/counter/**"]
+  todos:
+    paths: ["src/features/todos/**"]
+  greeting:
+    paths: ["src/features/greeting/**"]
 open:                             # paths every member may edit
   - README.md
