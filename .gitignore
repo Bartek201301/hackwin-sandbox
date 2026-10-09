@@ -5,3 +5,6 @@ CLAUDE.local.md
 hackwin-report.md
 hackwin-report.json
 # hackwin:end
+
+node_modules/
+dist/

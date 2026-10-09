@@ -12,6 +12,16 @@
 
 <!-- The install, check and run commands. Secrets come from .env.local, which is never committed; .env.example lists the keys. -->
 
+Node 24, as in CI.
+
+| Command | What it does |
+| --- | --- |
+| `npm ci` | Clean install from the lockfile |
+| `npm run check` | Full check: lint, types, tests, build. Needs no secrets |
+| `npm test -- <files>` | Runs only the given test files (all tests without arguments) |
+| `npm run format -- <files>` | Formats only the given files |
+| `npm run dev` | Starts the dev server |
+
 ## Status
 
 <!-- Written by hand: what works and what does not work yet. Keep it true to the code. -->
