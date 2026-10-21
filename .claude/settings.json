@@ -3,7 +3,62 @@
     "deny": [
       "Read(./.env)",
       "Read(./.env.local)",
-      "Read(./.env.*.local)"
+      "Read(./.env.*.local)",
+      "Bash(gh pr merge *)",
+      "Bash(gh api *pulls/*/merge)",
+      "Bash(gh api *pulls/*/merge*)",
+      "Bash(gh api *mergePullRequest*)",
+      "Bash(git push * main)",
+      "Bash(git push * main *)",
+      "Bash(git push *:main)",
+      "Bash(git push *:main *)",
+      "Bash(git push *+main)",
+      "Bash(git push *+main *)",
+      "Bash(git push *refs/heads/main)",
+      "Bash(git push *refs/heads/main *)",
+      "Bash(git push *--all*)",
+      "Bash(git push *--branches*)",
+      "Bash(git push *--mirror*)",
+      "Bash(git push --all *)",
+      "Bash(git push --branches *)",
+      "Bash(git push --mirror *)",
+      "Bash(git push *--all)",
+      "Bash(git push *--branches)",
+      "Bash(git push *--mirror)"
+    ]
+  },
+  "hooks": {
+    "SessionStart": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "hackwin internal hook session-start"
+          }
+        ]
+      }
+    ],
+    "PreToolUse": [
+      {
+        "matcher": "Bash|Edit|MultiEdit|Write|NotebookEdit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "hackwin internal hook pre-tool-use"
+          }
+        ]
+      }
+    ],
+    "PostToolUse": [
+      {
+        "matcher": "Edit|MultiEdit|Write",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "hackwin internal hook post-tool-use"
+          }
+        ]
+      }
     ]
   }
 }
