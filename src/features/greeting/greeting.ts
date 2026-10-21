@@ -22,3 +22,6 @@ export const greeting: Feature = {
     root.append(input, output);
   },
 };
+export function whisper(name: string): string {
+  return greet(name).toLowerCase();
+}
